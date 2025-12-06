@@ -31,15 +31,14 @@ public class ItemAddServiceImpl implements ItemAddService {
         if (!byName.isEmpty()) return -1;
 
         // 아이템 정상 등록
+        int newItemNumber;
         int lastItemNumber = itemRepository.getLastItemNumber();
-        if (lastItemNumber == -1){ //repository에 아이템이 없는 경우
-            itemRepository.save(new ItemDTO(1, name, rank, quality, power));
-            return 1;
+        if (lastItemNumber == -1) { //repository에 아이템이 없는 경우 getLastItemNumber는 -1을 반환
+            newItemNumber = 1;
+        } else { //마지막 아이템의 고유번호를 확인한 경우
+            newItemNumber = lastItemNumber + 1;
         }
-        else {
-            int newItemNumber = lastItemNumber+1;
-            itemRepository.save(new ItemDTO(newItemNumber, name, rank, quality, power));
-            return newItemNumber;
-        }
+        itemRepository.save(new ItemDTO(newItemNumber, name, rank, quality, power));
+        return newItemNumber;
     }
 }
