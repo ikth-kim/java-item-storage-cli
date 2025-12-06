@@ -17,7 +17,7 @@ public class ItemRepository implements ItemRepositoryInterface {
     @Override
     public ItemDTO findById(Integer id) {
         return itemDTOList.stream()
-                .filter(item -> item.getNumber()==id)
+                .filter(item -> item.getNumber() == id)
                 .findFirst()
                 .orElse(null); // 못 찾으면 null
     }
@@ -42,8 +42,15 @@ public class ItemRepository implements ItemRepositoryInterface {
         return List.copyOf(itemDTOList); // 방어적 복사
     }
 
-  @Override
-  public boolean delete(Integer id) {
-    return itemDTOList.removeIf(item -> item.getNumber() == id.intValue());
-  }
+    @Override
+    public boolean delete(Integer id) {
+        return itemDTOList.removeIf(item -> item.getNumber() == id.intValue());
+    }
+
+    @Override
+    public Integer getLastItemNumber() {
+        return itemDTOList.get(itemDTOList.size()-1).getNumber();
+    }
+
+
 }

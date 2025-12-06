@@ -18,4 +18,10 @@ public interface ItemRepositoryInterface {
 
     boolean delete(Integer id);
 
+    /**
+     * 마지막 요소의 순번을 반환한다.
+     * @return
+     */
+    Integer getLastItemNumber();
+
 }
