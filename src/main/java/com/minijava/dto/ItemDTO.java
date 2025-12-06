@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class ItemDTO implements Serializable, Comparable<ItemDTO> {
 
-  /* 아이템 정보를 저장할 DTO 클래스 */
+  /* 아이템 정보를 저장할 DTO 클래스  */
   private int number;      // 아이템 고유 번호
   private String name;     // 아이템 이름
   private String rank;     // 등급 (노말, 레어, 에픽, 유니크, 레전드리, 미스틱, 에인션트)

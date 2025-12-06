@@ -16,7 +16,7 @@ public interface ItemRepositoryInterface {
   /**
    * 고유 번호(ID)로 아이템을 찾음
    * @param id 찾을 아이템의 고유 번호
-   * @return 발견된 ItemDTO, 없으면 null
+   * @return  발견된 ItemDTO, 없으면 null
    */
   ItemDTO findById(Integer id);
 
@@ -54,7 +54,7 @@ public interface ItemRepositoryInterface {
 
   /**
    * 현재 저장된 아이템 중 가장 큰 고유 번호를 반환한다.
-   * @return 가장 큰 ID 값, 저장소가 비어있으면 0 반환
+   * @return 가장 큰 ID 값, 저장소가 비어있으면 -1 반환
    */
   Integer getLastItemNumber();
 
