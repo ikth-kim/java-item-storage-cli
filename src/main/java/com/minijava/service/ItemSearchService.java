@@ -23,9 +23,13 @@ public interface ItemSearchService {
    * @param name 조회할 상품 이름
    * @return 이름이 일치하는 ItemDTO 목록
    */
-  List<ItemDTO> findItemsByName(String name);
+  ItemDTO findItemsByName(String name);
 
-
+  /**
+   * 상품 이름에 keyword를 포함하는 모든 상품을 조회합니다.
+   * @param keyword 조회할 상품 keyword
+   * @return keyword를 포함하는 ItemDTO 목록
+   */
   List<ItemDTO> searchItemsByKeyword(String keyword);
 
 }
