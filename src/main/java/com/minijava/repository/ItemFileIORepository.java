@@ -48,8 +48,8 @@ public class ItemFileIORepository implements ItemRepositoryInterface{
     }
 
     @Override
-    public List<ItemDTO> findByName(String name) {
-        return List.of();
+    public ItemDTO findByName(String name) {
+        return null;
     }
 
     @Override

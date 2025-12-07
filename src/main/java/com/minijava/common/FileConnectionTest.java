@@ -9,6 +9,7 @@ public class FileConnectionTest {
         deleteTest();
         writeTest();
         readTest();
+        deleteTest();
     }
 
     private static void deleteTest() {

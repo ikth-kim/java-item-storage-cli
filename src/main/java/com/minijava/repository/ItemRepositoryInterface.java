@@ -23,7 +23,7 @@ public interface ItemRepositoryInterface {
    * @param name 검색할 이름
    * @return 일치하는 아이템 리스트
    */
-  List<ItemDTO> findByName(String name);
+  ItemDTO findByName(String name);
 
   /**
    * 이름에 특정 키워드가 포함된 아이템들을 찾음
