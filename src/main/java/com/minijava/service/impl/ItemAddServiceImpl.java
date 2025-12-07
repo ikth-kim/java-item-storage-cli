@@ -33,12 +33,12 @@ public class ItemAddServiceImpl implements ItemAddService {
         // 아이템 정상 등록
         int newItemNumber;
         int lastItemNumber = itemRepository.getLastItemNumber();
-        if (lastItemNumber == -1) { //repository에 아이템이 없는 경우 getLastItemNumber는 -1을 반환
-            newItemNumber = 1;
+        if (lastItemNumber == -1) { //repository에 아이템이 없는 경우 getLastItemNumber()는 -1을 반환
+            newItemNumber = 1; //초기값
         } else { //마지막 아이템의 고유번호를 확인한 경우
             newItemNumber = lastItemNumber + 1;
         }
-        itemRepository.save(new ItemDTO(newItemNumber, name, rank, quality, power));
+        itemRepository.addItem(new ItemDTO(newItemNumber, name, rank, quality, power));
         return newItemNumber;
     }
 }

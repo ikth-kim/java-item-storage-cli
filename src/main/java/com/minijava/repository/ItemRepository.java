@@ -10,7 +10,7 @@ public class ItemRepository implements ItemRepositoryInterface {
     private final List<ItemDTO> itemDTOList = new ArrayList<>();
 
     @Override
-    public void save(ItemDTO item) {
+    public void addItem(ItemDTO item) {
         itemDTOList.add(item);
     }
 

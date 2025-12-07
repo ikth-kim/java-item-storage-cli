@@ -9,7 +9,7 @@ public interface ItemRepositoryInterface {
    * 아이템을 저장소에 저장함
    * @param item 저장할 아이템 객체
    */
-  void save(ItemDTO item);
+  void addItem(ItemDTO item);
 
   /**
    * 고유 번호(ID)로 아이템을 찾음
@@ -23,7 +23,7 @@ public interface ItemRepositoryInterface {
    * @param name 검색할 이름
    * @return 일치하는 아이템 리스트
    */
-  List<ItemDTO> findByName(String name);
+  ItemDTO findByName(String name);
 
   /**
    * 이름에 특정 키워드가 포함된 아이템들을 찾음
